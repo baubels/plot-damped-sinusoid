@@ -1,4 +1,6 @@
 from numpy import exp, cos, linspace
+import matplotlib as mpl
+mpl.use('Agg')
 import matplotlib.pyplot as plt
 import os, time, glob
 
