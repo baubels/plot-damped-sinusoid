@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title>Results Page</title>
+  </head>
+  <body>
+      <h1>Results!</h1>
+			<form method="post" action="">
+			<p>
+				{% if val != None %}
+				{% if form.SVG.data %}
+				{{val|safe}}
+				{% else %}
+				<img src="data:image/png;base64, {{val}}" width="750" />
+				{% endif %}
+				{% endif %}
+			</p>
+			</form>
+			<FORM><INPUT Type="button" VALUE="Back" onClick="history.go(-1);return true;"></FORM>
+  </body>
+</html>

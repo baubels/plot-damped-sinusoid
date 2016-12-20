@@ -1,0 +1,49 @@
+<html>
+<head>
+	<title>Main Page</title>
+	<link rel="stylesheet" href="../static/basic.css" type="text/css" />
+
+	<script type="text/x-mathjax-config">
+	MathJax.Hub.Config({
+	  TeX: {
+	     equationNumbers: {  autoNumber: "AMS"  },
+	     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+	  }
+	});
+	</script>
+	<script type="text/javascript"
+	 src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+</head>
+
+<body>
+      <h1>Hello, there!</h1>
+			This web page visualizes the function \(u(t) = Ae^{-bt}\sin (w t),\)  for \( t\in [0,T] \).
+			<p> </p>
+			<form action="" method="post" name="parameter">
+			{{ form.hidden_tag() }} 
+			<table>
+			  {% for field in form %}
+			    <tr>
+					{% if not 'csrf' in field.name %}
+			    <td class="blue">{{ field.name }}</td>
+					<td>{{ field }}</td>
+			    <td>{{ field.label }}</td>
+					{% if field.errors %}
+					<td>
+						<ul class="errors">
+							{% for error in field.errors %}
+							<li>
+								<font color ="red">{{ error }}</font>
+							</li>
+							{% endfor %}
+						</ul>
+					</td>
+					{% endif %}
+			    </tr>
+					{% endif %}
+					{% endfor %}
+			</table>
+			<p><input type=submit value=Compute></form></p>
+</body>
+</html>
