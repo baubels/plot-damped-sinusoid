@@ -25,7 +25,7 @@ def main():
         val = None
         return render_template('main.html', form=form, val=val)
 
-# @app.route('/result', methods=['GET','POST'])
-# def result():
-# 	val = None
-#  	return render_template('result.html',val=val)
+@app.route('/result', methods=['GET','POST'])
+def result():
+	val = None
+ 	return render_template('result.html',val=val)
